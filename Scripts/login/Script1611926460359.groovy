@@ -32,7 +32,8 @@ WebUI.setEncryptedText(findTestObject('Object Repository/Page_Sign in to GitHub 
 
 WebUI.click(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/input_Forgot password_commit'))
 
-//WebUI.verifyTextPresent(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/icon_github'), false, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyTextPresent('All gists', false, FailureHandling.STOP_ON_FAILURE)
+
 WebUI.click(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/icon_profil'))
 
 WebUI.click(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/Input_Your_Gits'))
@@ -71,13 +72,18 @@ WebUI.setText(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/I
 
 WebUI.setText(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/Input_komen_gits'), 'Hellow')
 
-//WebUI.click(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/Input_button_update_gits'))
+WebUI.click(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/Input_button_update_gits'))
 
 WebUI.click(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/icon_profil'))
 
 WebUI.click(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/Input_logout_gits'))
 
+try
+{
 WebUI.acceptAlert()
+} catch (Exception e) {
+WebUI.delay(1)
+}
 
 WebUI.click(findTestObject('Object Repository/Page_Sign in to GitHub  GitHub/Input_final_signout'))
 
